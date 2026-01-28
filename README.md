@@ -40,7 +40,7 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 
 
 
-> **(start_span)Figure 1:** The hybrid detection circuit combining ADC voltage sampling and NFC coil interaction.(end_span)
+> **Figure 1:** The hybrid detection circuit combining ADC voltage sampling and NFC coil interaction.
 
 ### Workflow Logic
 
@@ -57,16 +57,11 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 ```text
 .
 ├── docs/
-│ ├── hardware_schematic.png # Circuit Diagrams
+│ ├── hardware_schematic.png # Circuit Diagrams (Wired)
+│ ├── hybrid_hardware_layout.png # Hybrid ID Hardware (NFC+ADC)
 │ ├── flowchart.png # Logic Flow
-│ └── Technical_Disclosure.pdf # Original Research Document (CN)
-├── src/
-│ ├── kernel_driver/ # (Prototype) Kernel module logic
-│ ├── hal/ # Android HAL implementation concepts
-│ └── scripts/ # Termux/Shell testing scripts
-├── LICENSE # Apache License 2.0
-└── README.md
-
+│ ├── Technical_Disclosure_CN.pdf # Original Research Document (CN)
+│ └── Technical_Disclosure_EN.pdf # Technical Disclosure (EN)
 ```
 
 ## ⚠️ Disclaimer
