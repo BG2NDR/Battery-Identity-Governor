@@ -67,10 +67,11 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 ├── LICENSE # Apache License 2.0
 └── README.md
 ```
-⚠️ Disclaimer & Research Notice
+## ⚠️ Disclaimer & Research Notice
 Research Prototype Only.
 This project represents the architectural implementation of the patent disclosure "Battery Identity Recognition & System Scheduling Method". It is intended as a Proof of Concept (PoC) for demonstrating the logic of hardware-driven kernel scheduling.
 Improper use on unsupported hardware may cause permanent battery damage. The author assumes no responsibility for hardware failure.
-📜 License
+
+## 📜 License
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 Authored by: Yuan Jiayi (BG2NDR)
