@@ -67,6 +67,8 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 ├── LICENSE # Apache License 2.0
 └── README.md
 
+```
+
 ⚠️ Disclaimer
 Research Prototype Only.
 This project involves modifying kernel thermal parameters and voltage limits. Improper use on unsupported hardware may cause permanent battery damage, overheating, or hardware failure.
