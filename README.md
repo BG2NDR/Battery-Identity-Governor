@@ -15,6 +15,8 @@ When a specific battery (e.g., High-Rate Gaming Battery) is inserted, this gover
 
 **Core Philosophy:** *The hardware defines the performance boundary, not the software user interface.*
 
+> **Architectural Note:** This system functions as a **supplementary decision layer**, providing physical constraints to the existing Thermal HAL, rather than replacing the fundamental SoC thermal protection mechanisms.
+
 ## 🚀 Key Features
 
 ### 1. Hybrid Identity Verification
@@ -38,8 +40,6 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 ### Hardware Topology
 *(Please refer to `docs/hardware_schematic.png` for pinout details)*
 
-
-
 > **Figure 1:** The hybrid detection circuit combining ADC voltage sampling and NFC coil interaction.
 
 ### Workflow Logic
@@ -49,26 +49,28 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 3. **Policy Space:** Match UID against `policy_map.json`.
 4. **Kernel Space:** Write new values to `/sys/class/thermal/` and `/sys/devices/system/cpu/`.
 
-
 > **Figure 2:** The decision-making flowchart from hardware interrupt to kernel execution.
 
 ## 📂 Repository Structure
 
 ```text
-.
 ├── docs/
 │ ├── hardware_schematic.png # Circuit Diagrams (Wired)
 │ ├── hybrid_hardware_layout.png # Hybrid ID Hardware (NFC+ADC)
 │ ├── flowchart.png # Logic Flow
 │ ├── Technical_Disclosure_CN.pdf # Original Research Document (CN)
 │ └── Technical_Disclosure_EN.pdf # Technical Disclosure (EN)
+├── src/
+│ ├── kernel_driver/ # (Prototype) Kernel module logic
+│ ├── hal/ # Android HAL implementation concepts
+│ └── scripts/ # Termux/Shell testing scripts
+├── LICENSE # Apache License 2.0
+└── README.md
 ```
-
-## ⚠️ Disclaimer
+⚠️ Disclaimer & Research Notice
 Research Prototype Only.
-This project involves modifying kernel thermal parameters and voltage limits. Improper use on unsupported hardware may cause permanent battery damage, overheating, or hardware failure.
-The author assumes no responsibility for any damage caused by the use of this code. Always verify battery physical specifications before unlocking thermal walls.
-
-## 📜 License
+This project represents the architectural implementation of the patent disclosure "Battery Identity Recognition & System Scheduling Method". It is intended as a Proof of Concept (PoC) for demonstrating the logic of hardware-driven kernel scheduling.
+Improper use on unsupported hardware may cause permanent battery damage. The author assumes no responsibility for hardware failure.
+📜 License
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 Authored by: Yuan Jiayi (BG2NDR)
