@@ -69,10 +69,11 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 
 ```
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 Research Prototype Only.
 This project involves modifying kernel thermal parameters and voltage limits. Improper use on unsupported hardware may cause permanent battery damage, overheating, or hardware failure.
 The author assumes no responsibility for any damage caused by the use of this code. Always verify battery physical specifications before unlocking thermal walls.
-📜 License
+
+## 📜 License
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 Authored by: Yuan Jiayi (BG2NDR)
