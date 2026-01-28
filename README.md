@@ -17,15 +17,15 @@ When a specific battery (e.g., High-Rate Gaming Battery) is inserted, this gover
 
 ## 🚀 Key Features
 
-### 1. [span_0](start_span)Hybrid Identity Verification[span_0](end_span)
+### 1. Hybrid Identity Verification
 * **Resistor ID (Fast Path):** Utilizes an ADC interface to read the ID pin voltage divider. Provides instant categorization (e.g., Standard vs. High-Performance) with zero latency.
 * **NFC/RFID Handshake (Secure Path):** Reads encrypted metadata from the battery's embedded tag via I2C/1-Wire to verify authenticity and fetch detailed discharge parameters (C-Rate, Max Temp).
 
-### 2. [span_1](start_span)Interrupt-Driven Architecture[span_1](end_span)
+### 2. Interrupt-Driven Architecture
 * Unlike legacy polling methods, this module registers a hardware interrupt (IRQ) on the battery connector's detection pin.
 * System response is triggered immediately upon physical insertion (`Plug_Event`), ensuring seamless mode switching.
 
-### 3. [span_2](start_span)Dynamic Resource Governance[span_2](end_span)
+### 3. Dynamic Resource Governance
 Once a high-performance battery is verified, the governor executes the following kernel overrides:
 * **Thermal Wall Relaxation:** Modifies PMIC current limits and raises thermal throttling thresholds.
 * **DVFS Unlocking:** Unlocks "Turbo" frequency tables for CPU/GPU (e.g., enabling overclocking frequencies previously hidden).
@@ -40,7 +40,7 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 
 
 
-> **[span_3](start_span)Figure 1:** The hybrid detection circuit combining ADC voltage sampling and NFC coil interaction.[span_3](end_span)
+> **(start_span)Figure 1:** The hybrid detection circuit combining ADC voltage sampling and NFC coil interaction.(end_span)
 
 ### Workflow Logic
 
@@ -49,9 +49,8 @@ The system bridges the gap between the **Physical Layer** (Battery Pack) and the
 3. **Policy Space:** Match UID against `policy_map.json`.
 4. **Kernel Space:** Write new values to `/sys/class/thermal/` and `/sys/devices/system/cpu/`.
 
-[attachment_0](attachment)
 
-> **[span_4](start_span)Figure 2:** The decision-making flowchart from hardware interrupt to kernel execution.[span_4](end_span)
+> **Figure 2:** The decision-making flowchart from hardware interrupt to kernel execution.
 
 ## 📂 Repository Structure
 
